@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #1a1a1a;
+  color: #f5f5f5;
+}
+
+.section-divider {
+  @apply w-full max-w-2xl mx-auto border-t border-gray-600 my-4;
+}
