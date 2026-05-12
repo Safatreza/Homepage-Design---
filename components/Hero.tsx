@@ -2,78 +2,74 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <>
-      {/* Hero */}
-      <section
-        id="home"
-        className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16"
-      >
-        {/* Real background image */}
-        <Image
-          src="/background.jpeg"
-          alt="René Kühn Unternehmensberatung"
-          fill
-          priority
-          className="object-cover object-center"
-          sizes="100vw"
-        />
+    <section id="home" className="relative min-h-screen flex items-end overflow-hidden">
+      {/* Full-bleed background */}
+      <Image
+        src="/background.jpeg"
+        alt=""
+        fill
+        priority
+        className="object-cover object-center"
+        sizes="100vw"
+      />
 
-        {/* Dark overlay for readability */}
-        <div className="absolute inset-0 bg-black/65" />
+      {/* Dual gradient: left-to-right darkness + bottom-to-top darkness */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black via-black/75 to-black/20" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-black/30" />
 
-        <div className="relative z-10 text-center px-6 max-w-3xl mx-auto">
-          {/* Real logo */}
-          <div className="flex justify-center mb-8">
-            <div className="relative h-28 w-28 md:h-36 md:w-36">
-              <Image
-                src="/logo.jpeg"
-                alt="René Kühn Logo"
-                fill
-                priority
-                className="object-contain"
-                sizes="144px"
-              />
-            </div>
-          </div>
-
-          <p className="text-sm md:text-base uppercase tracking-[0.3em] text-gold mb-3 font-sans">
-            Strategische Beratung
+      {/* Bottom-left content block — editorial */}
+      <div className="relative z-10 w-full px-8 md:px-20 pb-20 md:pb-28">
+        <div className="max-w-xl">
+          <p className="text-[10px] uppercase tracking-[0.5em] text-gold mb-8 opacity-90">
+            Strategische Beratung · München
           </p>
 
-          <h1 className="font-serif text-5xl md:text-7xl text-white tracking-widest mb-4">
-            René Kühn
+          <h1 className="font-serif text-[clamp(4rem,10vw,8rem)] text-white leading-[0.9] tracking-tight mb-8">
+            René<br />Kühn
           </h1>
 
-          <div className="w-16 h-px bg-gold mx-auto mb-6" />
+          <div className="flex items-center gap-4 mb-8">
+            <div className="w-10 h-px bg-gold" />
+            <p className="text-[10px] uppercase tracking-[0.4em] text-gray-400">
+              Finanzcoaching · Unternehmensberatung · Buchhaltung
+            </p>
+          </div>
 
-          <p className="text-gray-300 text-sm md:text-base leading-relaxed mb-10 max-w-xl mx-auto">
-            Finanzcoaching · Unternehmensberatung · Buchhaltungsservice
+          <p className="text-gray-400 text-sm leading-loose mb-12 max-w-sm">
+            Effizienz schaffen. Wachstum ermöglichen. Vertrauen aufbauen.
           </p>
 
-          <a
-            href="#dienstleistungen"
-            className="inline-block border border-gold text-gold hover:bg-gold hover:text-black transition-all duration-300 text-sm uppercase tracking-widest px-8 py-3"
-          >
-            Mehr erfahren
-          </a>
+          <div className="flex items-center gap-6">
+            <a
+              href="#dienstleistungen"
+              className="inline-block bg-gold text-black text-[10px] uppercase tracking-[0.3em] px-8 py-3.5 hover:bg-gold-light transition-colors duration-300 font-medium"
+            >
+              Leistungen
+            </a>
+            <a
+              href="#kontakt"
+              className="text-[10px] uppercase tracking-[0.3em] text-gray-400 hover:text-white transition-colors duration-300 flex items-center gap-2"
+            >
+              Kontakt <span className="text-gold">→</span>
+            </a>
+          </div>
         </div>
+      </div>
 
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-400 text-xs tracking-widest uppercase">
-          <span>Scroll</span>
-          <div className="w-px h-8 bg-gold/50" />
+      {/* Scroll indicator — bottom right */}
+      <div className="absolute bottom-8 right-8 md:right-16 z-10 flex flex-col items-center gap-3">
+        <span className="text-[9px] uppercase tracking-[0.4em] text-gray-500 [writing-mode:vertical-rl] rotate-180">
+          Scroll
+        </span>
+        <div className="w-px h-12 bg-gradient-to-b from-gold/60 to-transparent" />
+      </div>
+
+      {/* Top-right logo mark */}
+      <div className="absolute top-24 right-8 md:right-16 z-10">
+        <div className="relative h-14 w-14 md:h-16 md:w-16 opacity-80 hover:opacity-100 transition-opacity">
+          <Image src="/logo.jpeg" alt="René Kühn" fill className="object-contain" sizes="64px" />
         </div>
-      </section>
-
-      {/* Welcome strip */}
-      <section className="bg-dark-section py-6 px-6 text-center border-y border-white/10">
-        <p className="text-gray-400 text-xs md:text-sm tracking-widest uppercase">
-          Willkommen bei{" "}
-          <a href="#dienstleistungen" className="text-gold hover:text-gold-light transition-colors">
-            Kühn Unternehmensberatung
-          </a>
-        </p>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }

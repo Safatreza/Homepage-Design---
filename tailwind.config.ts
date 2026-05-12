@@ -10,12 +10,11 @@ const config: Config = {
     extend: {
       colors: {
         gold: "#c9a84c",
-        "gold-light": "#d4b86a",
-        "dark-bg": "#1a1a1a",
-        "dark-card": "#252525",
-        "dark-section": "#2a2a2a",
+        "gold-light": "#dfc06a",
+        "dark-bg": "#111111",
+        "dark-card": "#1a1a1a",
+        "dark-section": "#161616",
         "light-bg": "#d8d8d8",
-        "testimonial-blue": "#5b7ba8",
       },
       fontFamily: {
         serif: ["var(--font-playfair)", "Georgia", "serif"],
