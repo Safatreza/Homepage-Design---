@@ -12,5 +12,5 @@ body {
 }
 
 .section-divider {
-  @apply w-full max-w-2xl mx-auto border-t border-gray-600 my-4;
+  @apply w-full max-w-2xl mx-auto border-t border-white/10 my-6;
 }

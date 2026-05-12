@@ -1,43 +1,50 @@
 const testimonials = [
   {
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eleifend congue massa suscipit fermentum. Fusce in tellus at urna hendrerit pharetra nec ut ex.",
-    author: "Lorem ipsum",
+    text: "René hat unsere Unternehmensfinanzen vollständig neu strukturiert. Seitdem haben wir einen klaren Überblick und können viel gezielter investieren.",
+    author: "Markus T.",
+    role: "Geschäftsführer",
   },
   {
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eleifend congue massa suscipit fermentum. Fusce in tellus at urna hendrerit pharetra nec ut ex.",
-    author: "Lorem ipsum",
+    text: "Das Finanzcoaching hat meine Sichtweise auf Geld grundlegend verändert. Ich fühle mich heute viel sicherer bei meinen Anlageentscheidungen.",
+    author: "Sandra K.",
+    role: "Unternehmerin",
   },
   {
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eleifend congue massa suscipit fermentum. Fusce in tellus at urna hendrerit pharetra nec ut ex.",
-    author: "Lorem ipsum",
+    text: "Dank des Buchhaltungsservices spare ich jeden Monat wertvolle Stunden. Alles läuft reibungslos und mein Steuerberater ist begeistert.",
+    author: "Thomas R.",
+    role: "Freiberufler",
   },
 ];
 
 export default function Testimonials() {
   return (
-    <section className="bg-light-bg py-20 px-6">
+    <section className="bg-dark-bg py-24 px-6 border-t border-white/10">
       <div className="max-w-5xl mx-auto">
-        {/* Title */}
-        <div className="text-center mb-10">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
-            Was die Leute über uns sagen
+        <div className="text-center mb-14">
+          <p className="text-xs uppercase tracking-[0.3em] text-gold mb-3">Referenzen</p>
+          <h2 className="text-2xl md:text-3xl font-bold text-white tracking-wide">
+            Was Kunden sagen
           </h2>
-          <hr className="border-gray-400 max-w-lg mx-auto" />
+          <div className="w-16 h-px bg-gold mx-auto mt-6" />
         </div>
 
-        {/* Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {testimonials.map((t, i) => (
             <div
               key={i}
-              className="bg-light-bg border border-testimonial-blue p-6 flex flex-col gap-4 text-center"
+              className="bg-dark-section border border-white/10 p-8 flex flex-col gap-5"
             >
-              <p className="text-gray-700 text-sm leading-relaxed">
-                &ldquo;{t.text}&rdquo;
+              {/* Quote mark */}
+              <span className="text-gold text-4xl font-serif leading-none">&ldquo;</span>
+
+              <p className="text-gray-300 text-sm leading-relaxed flex-1">
+                {t.text}
               </p>
-              <p className="text-gray-600 text-sm font-medium">
-                – {t.author} –
-              </p>
+
+              <div className="border-t border-white/10 pt-4">
+                <p className="text-white text-sm font-medium">{t.author}</p>
+                <p className="text-gold text-xs">{t.role}</p>
+              </div>
             </div>
           ))}
         </div>
