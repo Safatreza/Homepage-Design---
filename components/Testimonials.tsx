@@ -1,3 +1,5 @@
+import AnimateIn from "./AnimateIn";
+
 const testimonials = [
   {
     text: "René hat unsere Unternehmensfinanzen vollständig neu strukturiert. Seitdem haben wir einen klaren Überblick und können viel gezielter investieren.",
@@ -18,40 +20,44 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section id="referenzen" className="bg-dark-bg py-28 px-8 md:px-20 border-t border-white/10">
+    <section id="referenzen" className="bg-dark-bg py-28 px-8 md:px-20 border-t border-white/[0.06]">
       <div className="max-w-5xl mx-auto">
         {/* Header */}
-        <div className="flex items-end justify-between mb-20">
-          <div>
-            <p className="text-[10px] uppercase tracking-[0.5em] text-gold mb-4">Referenzen</p>
-            <h2 className="font-serif text-4xl md:text-5xl text-white leading-tight">
-              Was Kunden<br />über mich sagen.
-            </h2>
+        <AnimateIn>
+          <div className="flex items-end justify-between mb-20">
+            <div>
+              <p className="text-[9px] uppercase tracking-[0.55em] text-gold mb-4">Referenzen</p>
+              <h2 className="font-serif text-4xl md:text-5xl text-white leading-tight">
+                Was Kunden<br />über mich sagen.
+              </h2>
+            </div>
+            <div className="hidden md:block w-1/4 h-px bg-white/10 mb-3" />
           </div>
-          <div className="hidden md:block w-1/4 h-px bg-white/10 mb-3" />
-        </div>
+        </AnimateIn>
 
-        {/* Testimonial cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/10">
+        {/* Testimonial cards — separated by 1 px borders */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/[0.07]">
           {testimonials.map((t, i) => (
-            <div
-              key={i}
-              className="bg-dark-bg p-10 flex flex-col gap-6 hover:bg-dark-section transition-colors duration-300"
-            >
-              <span className="font-serif text-6xl text-gold/30 leading-none select-none">"</span>
+            <AnimateIn key={i} delay={i * 100}>
+              <div className="group bg-dark-bg p-10 flex flex-col gap-6 hover:bg-[#161616] transition-colors duration-400 h-full">
+                {/* Large quote mark */}
+                <span className="font-serif text-7xl text-gold/20 group-hover:text-gold/35 transition-colors duration-500 leading-none select-none -mb-2">
+                  "
+                </span>
 
-              <p className="text-gray-300 text-sm leading-relaxed flex-1">
-                {t.text}
-              </p>
+                <p className="text-gray-400 text-sm leading-[1.85] flex-1 group-hover:text-gray-300 transition-colors duration-300">
+                  {t.text}
+                </p>
 
-              <div className="flex items-center gap-3 pt-4 border-t border-white/10">
-                <div className="w-1 h-6 bg-gold" />
-                <div>
-                  <p className="text-white text-sm font-medium">{t.author}</p>
-                  <p className="text-gray-500 text-xs">{t.role}</p>
+                <div className="flex items-center gap-3 pt-5 border-t border-white/[0.07]">
+                  <div className="w-1 h-6 bg-gold shrink-0" />
+                  <div>
+                    <p className="text-white text-sm font-medium">{t.author}</p>
+                    <p className="text-gray-600 text-[10px] tracking-wide mt-0.5">{t.role}</p>
+                  </div>
                 </div>
               </div>
-            </div>
+            </AnimateIn>
           ))}
         </div>
       </div>

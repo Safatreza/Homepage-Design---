@@ -1,6 +1,8 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import MarqueeBand from "@/components/MarqueeBand";
 import Services from "@/components/Services";
+import QuoteSection from "@/components/QuoteSection";
 import About from "@/components/About";
 import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
@@ -11,7 +13,9 @@ export default function Home() {
     <main>
       <Navbar />
       <Hero />
+      <MarqueeBand />
       <Services />
+      <QuoteSection />
       <About />
       <Testimonials />
       <Contact />

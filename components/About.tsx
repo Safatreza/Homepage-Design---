@@ -1,11 +1,12 @@
 import Image from "next/image";
+import AnimateIn from "./AnimateIn";
 
 export default function About() {
   return (
     <section id="ueber-mich" className="bg-dark-section">
       <div className="max-w-none grid grid-cols-1 md:grid-cols-2">
-        {/* Image panel — full bleed, no padding */}
-        <div className="relative min-h-[400px] md:min-h-[600px] overflow-hidden">
+        {/* Image panel — full bleed */}
+        <AnimateIn direction="left" className="relative min-h-[420px] md:min-h-[620px] overflow-hidden">
           <Image
             src="/background.jpeg"
             alt="René Kühn"
@@ -13,19 +14,20 @@ export default function About() {
             className="object-cover object-center"
             sizes="50vw"
           />
-          {/* Subtle dark vignette */}
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent to-dark-section/60" />
-          <div className="absolute inset-0 bg-gradient-to-t from-dark-section/50 to-transparent" />
-
-          {/* Floating gold frame inset */}
-          <div className="absolute inset-6 border border-gold/20 pointer-events-none" />
-        </div>
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent to-dark-section/70" />
+          <div className="absolute inset-0 bg-gradient-to-t from-dark-section/60 to-transparent" />
+          {/* Gold inset frame */}
+          <div className="absolute inset-5 border border-gold/20 pointer-events-none" />
+          {/* Corner accents */}
+          <div className="absolute top-5 left-5 w-6 h-6 border-t border-l border-gold/50" />
+          <div className="absolute bottom-5 right-5 w-6 h-6 border-b border-r border-gold/50" />
+        </AnimateIn>
 
         {/* Text panel */}
-        <div className="flex flex-col justify-center px-10 md:px-16 lg:px-20 py-20">
-          <p className="text-[10px] uppercase tracking-[0.5em] text-gold mb-8">Über mich</p>
+        <AnimateIn direction="right" className="flex flex-col justify-center px-10 md:px-16 lg:px-20 py-20 bg-dark-section">
+          <p className="text-[9px] uppercase tracking-[0.55em] text-gold mb-8">Über mich</p>
 
-          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-white leading-tight mb-8">
+          <h2 className="font-serif text-3xl md:text-4xl lg:text-[2.75rem] text-white leading-tight mb-8">
             Mein Anspruch,<br />
             mein Ziel –{" "}
             <span className="text-gold">Zusammenarbeit<br />auf Augenhöhe</span>
@@ -33,24 +35,24 @@ export default function About() {
 
           <div className="w-10 h-px bg-gold mb-8" />
 
-          {/* Small portrait photo */}
+          {/* Small portrait */}
           <div className="flex items-center gap-5 mb-8">
-            <div className="relative h-20 w-20 shrink-0 rounded-full overflow-hidden border border-gold/30">
+            <div className="relative h-[72px] w-[72px] shrink-0 rounded-full overflow-hidden ring-1 ring-gold/30">
               <Image
                 src="/portrait.jpeg"
                 alt="René Kühn"
                 fill
                 className="object-cover object-top"
-                sizes="80px"
+                sizes="72px"
               />
             </div>
             <div>
-              <p className="text-white text-sm font-medium">René Kühn</p>
-              <p className="text-gray-500 text-xs mt-0.5">Unternehmensberater</p>
+              <p className="text-white text-sm font-medium tracking-wide">René Kühn</p>
+              <p className="text-gray-500 text-[10px] uppercase tracking-[0.3em] mt-1">Unternehmensberater</p>
             </div>
           </div>
 
-          <p className="text-gray-400 text-sm leading-relaxed mb-10">
+          <p className="text-gray-400 text-sm leading-[1.85] mb-10">
             Finanzen und effiziente Prozesse sind meine Leidenschaft, aber der Mensch
             hinter den Zahlen steht für mich immer im Mittelpunkt. Als gelernter
             Steuerfachangestellter kenne ich die Praxis im Steuerbüro genauso gut wie
@@ -61,13 +63,30 @@ export default function About() {
             Ihrem Fundament für nachhaltigen Erfolg.
           </p>
 
+          {/* Stats strip */}
+          <div className="grid grid-cols-3 gap-4 mb-10 py-8 border-y border-white/10">
+            {[
+              { label: "Jahre Erfahrung", value: "10+" },
+              { label: "Mandate", value: "150+" },
+              { label: "Zufriedenheit", value: "100%" },
+            ].map((stat) => (
+              <div key={stat.label} className="text-center group">
+                <p className="font-serif text-2xl text-gold mb-1 group-hover:scale-105 transition-transform duration-300 inline-block">
+                  {stat.value}
+                </p>
+                <p className="text-[9px] uppercase tracking-widest text-gray-600 mt-0.5">{stat.label}</p>
+              </div>
+            ))}
+          </div>
+
           <a
             href="#kontakt"
-            className="self-start flex items-center gap-3 text-[10px] uppercase tracking-[0.4em] text-gold hover:text-gold-light transition-colors"
+            className="self-start flex items-center gap-3 text-[9px] uppercase tracking-[0.45em] text-gold hover:text-gold-light transition-colors group"
           >
-            Beratungsgespräch vereinbaren <span>→</span>
+            Beratungsgespräch vereinbaren
+            <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
           </a>
-        </div>
+        </AnimateIn>
       </div>
     </section>
   );
