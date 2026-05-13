@@ -4,18 +4,22 @@ export default function Hero() {
   return (
     <section id="home" className="relative min-h-screen flex items-end overflow-hidden">
       {/* Full-bleed background */}
+      {/* Background image — slightly blurred for glass feel */}
       <Image
         src="/background.jpeg"
         alt=""
         fill
         priority
-        className="object-cover object-center"
+        className="object-cover object-center scale-105 blur-[2px]"
         sizes="100vw"
       />
 
-      {/* Dual gradient: left-to-right darkness + bottom-to-top darkness */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black via-black/75 to-black/20" />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-black/30" />
+      {/* Glass-like base overlay — mutes the image significantly */}
+      <div className="absolute inset-0 bg-black/55" />
+
+      {/* Directional gradients for depth */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/25" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-black/40" />
 
       {/* Bottom-left content block — editorial */}
       <div className="relative z-10 w-full px-8 md:px-20 pb-20 md:pb-28">

@@ -2,23 +2,26 @@ const services = [
   {
     num: "01",
     title: "Finanzcoaching",
-    subtitle: "Der Weg zur finanziellen Freiheit.",
-    lead: "Geld ist mehr als Zahlen – es ist ein Werkzeug. Im Finanzcoaching entwickeln wir gemeinsam ein gesundes Money-Mindset, strukturieren Ihre Finanzen und entwerfen langfristige Anlagestrategien, die wirklich zu Ihnen passen.",
-    detail: "Von Budgetplanung über Altersvorsorge bis hin zu konkreten Investmentstrategien: ich begleite Sie auf dem Weg zu finanzieller Souveränität.",
+    subtitle: "Der Weg zur finanziellen Freiheit und Klarheit.",
+    lead: "Geld ist mehr als nur Zahlen auf Ihrem Konto – es ist ein Werkzeug für die Lebensgestaltung und die Altersvorsorge.",
+    detail:
+      "Im Finanzcoaching unterstütze ich Sie dabei, ein gesundes Money-Mindset zu entwickeln, die privaten Finanzen zu strukturieren und langfristige Strategien für den Vermögensaufbau zu entwerfen. Wir schauen uns zusammen verschiedene Möglichkeiten und Anlagestrategien an, die zu Ihren Bedürfnissen passen und schaffen ein Fundament, auf dem Sie sicher in die Zukunft blicken können.",
   },
   {
     num: "02",
     title: "Unternehmensberatung",
-    subtitle: "Strategie, Wachstum, Klarheit.",
-    lead: "Vom Start-up bis zum Mittelstand: ich analysiere Ihre Prozesse, identifiziere Wachstumspotenziale und entwickle klare Roadmaps — mit besonderem Augenmerk auf digitale Prozessoptimierung.",
-    detail: "Als strategischer Sparringspartner behalte ich den Blick für das große Ganze und führe Sie sicher durch jeden Veränderungsprozess.",
+    subtitle: "Strategie, Wachstum und nachhaltiger Erfolg.",
+    lead: "Vom Start-up bis zum etablierten Mittelstand: Ich begleite Sie bei der Optimierung Ihrer Geschäftsprozesse. Gemeinsam analysieren wir Ist-Zustände, identifizieren Wachstumspotenziale und entwickeln klare Roadmaps für Ihre Visionen mit dem Augenmerk auf eine digitale Prozessoptimierung.",
+    detail:
+      "Ob Neuausrichtung oder Skalierung – ich bin Ihr strategischer Sparringspartner, der den Blick für das große Ganze behält und Sie sicher durch Veränderungsprozesse führt.",
   },
   {
     num: "03",
-    title: "Buchhaltungsservice",
-    subtitle: "Mehr Zeit für Ihr Kerngeschäft.",
-    lead: "Ich übernehme die strukturierte Vorbereitung Ihrer Buch- und Lohnbuchhaltungsunterlagen für den Steuerberater — mit digitalisierten Prozessen, absoluter Sorgfalt und voller Verlässlichkeit.",
-    detail: "So haben Sie den Rücken frei für das, was wirklich zählt: Ihr Unternehmen voranzubringen.",
+    title: "Buch-/Lohnbuchhaltungsservice & Büroorganisation",
+    subtitle: "Mehr Zeit für das Kerngeschäft.",
+    lead: "Belege sortieren und Fristen im Blick behalten, können im Alltag schnell zur Belastung werden. Ich übernehme für Sie die strukturierte Vorbereitung Ihrer Buch-/Lohnbuchhaltungsunterlagen für den Steuerberater.",
+    detail:
+      "Mit digitalisierten Prozessen und absoluter Sorgfalt sorge ich dafür, dass Ihr Back-Office effizient und reibungslos läuft. So haben Sie den Rücken frei und können sich auf Ihr Kerngeschäft konzentrieren.",
   },
 ];
 
@@ -62,16 +65,10 @@ export default function Services() {
             </div>
 
             {/* Right text — hidden on mobile */}
-            <div className="hidden md:flex flex-col justify-between">
-              <p className="text-gray-500 text-sm leading-relaxed mt-10">
+            <div className="hidden md:flex flex-col justify-center">
+              <p className="text-gray-500 text-sm leading-relaxed">
                 {svc.detail}
               </p>
-              <a
-                href="#kontakt"
-                className="self-start text-[10px] uppercase tracking-[0.4em] text-gold hover:text-gold-light transition-colors mt-6 flex items-center gap-2"
-              >
-                Anfragen <span>→</span>
-              </a>
             </div>
           </div>
         ))}

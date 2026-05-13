@@ -26,38 +26,40 @@ export default function About() {
           <p className="text-[10px] uppercase tracking-[0.5em] text-gold mb-8">Über mich</p>
 
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-white leading-tight mb-8">
-            Der Mensch<br />
-            <span className="text-gold">hinter den Zahlen</span><br />
-            zählt.
+            Mein Anspruch,<br />
+            mein Ziel –{" "}
+            <span className="text-gold">Zusammenarbeit<br />auf Augenhöhe</span>
           </h2>
 
           <div className="w-10 h-px bg-gold mb-8" />
 
-          <p className="text-gray-400 text-sm leading-relaxed mb-5">
-            Als gelernter Steuerfachangestellter kenne ich die Praxis im Steuerbüro
-            genauso gut wie die Herausforderungen der freien Wirtschaft. Ich weiß
-            genau, wo im Geschäftsalltag die Hürden liegen — und wie man sie überwindet.
-          </p>
+          {/* Small portrait photo */}
+          <div className="flex items-center gap-5 mb-8">
+            <div className="relative h-20 w-20 shrink-0 rounded-full overflow-hidden border border-gold/30">
+              <Image
+                src="/portrait.jpeg"
+                alt="René Kühn"
+                fill
+                className="object-cover object-top"
+                sizes="80px"
+              />
+            </div>
+            <div>
+              <p className="text-white text-sm font-medium">René Kühn</p>
+              <p className="text-gray-500 text-xs mt-0.5">Unternehmensberater</p>
+            </div>
+          </div>
 
           <p className="text-gray-400 text-sm leading-relaxed mb-10">
-            Diese jahrelange Erfahrung nutze ich, um Ihnen bei Controlling,
-            Digitalisierung und Finanzanlagen den Rücken freizuhalten. Mein
-            Wissen wird Ihr Fundament für nachhaltigen Erfolg.
+            Finanzen und effiziente Prozesse sind meine Leidenschaft, aber der Mensch
+            hinter den Zahlen steht für mich immer im Mittelpunkt. Als gelernter
+            Steuerfachangestellter kenne ich die Praxis im Steuerbüro genauso gut wie
+            die Herausforderungen der freien Wirtschaft und weiß genau, wo im
+            Geschäftsalltag die Hürden liegen. Diese jahrelange Erfahrung nutze ich
+            heute, um Ihnen bei Controlling, Digitalisierung und Finanzanlagen den
+            Rücken freizuhalten. Ich teile mein Wissen nicht nur – ich mache es zu
+            Ihrem Fundament für nachhaltigen Erfolg.
           </p>
-
-          {/* Values strip */}
-          <div className="grid grid-cols-3 gap-4 mb-10 py-8 border-y border-white/10">
-            {[
-              { label: "Erfahrung", value: "10+" },
-              { label: "Mandate", value: "150+" },
-              { label: "Zufriedenheit", value: "100%" },
-            ].map((stat) => (
-              <div key={stat.label} className="text-center">
-                <p className="font-serif text-2xl text-gold mb-1">{stat.value}</p>
-                <p className="text-[10px] uppercase tracking-widest text-gray-500">{stat.label}</p>
-              </div>
-            ))}
-          </div>
 
           <a
             href="#kontakt"
