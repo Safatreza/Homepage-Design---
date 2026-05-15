@@ -85,9 +85,9 @@ export default function Services() {
         ))}
       </div>
 
-      {/* Bottom CTA */}
+      {/* Bottom CTA — hidden for now, may re-enable in future */}
       <AnimateIn delay={360}>
-        <div className="max-w-5xl mx-auto mt-16 pt-12 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-6">
+        <div className="hidden max-w-5xl mx-auto mt-16 pt-12 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-6">
           <p className="text-gray-600 text-sm">
             Alle Leistungen auch als individuelles Paket buchbar.
           </p>

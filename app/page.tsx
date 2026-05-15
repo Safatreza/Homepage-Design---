@@ -1,3 +1,4 @@
+import ScrollReset from "@/components/ScrollReset";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import MarqueeBand from "@/components/MarqueeBand";
@@ -11,6 +12,7 @@ import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <main>
+      <ScrollReset />
       <Navbar />
       <Hero />
       <MarqueeBand />

@@ -1,16 +1,15 @@
-const items = [
-  "Finanzcoaching",
-  "Unternehmensberatung",
-  "Buchhaltungsservice",
-  "Controlling",
-  "Digitalisierung",
-  "Vermögensaufbau",
-  "Steuerberatung",
-  "Prozessoptimierung",
+const items: { label: string; href: string }[] = [
+  { label: "Finanzcoaching",       href: "#dienstleistungen" },
+  { label: "Unternehmensberatung", href: "#dienstleistungen" },
+  { label: "Büroorganisation",     href: "#dienstleistungen" },
+  { label: "Controlling",          href: "#dienstleistungen" },
+  { label: "Digitalisierung",      href: "#dienstleistungen" },
+  { label: "Vermögensaufbau",      href: "#dienstleistungen" },
+  { label: "Buchhaltungsservice",  href: "#dienstleistungen" },
+  { label: "Prozessoptimierung",   href: "#dienstleistungen" },
 ];
 
 export default function MarqueeBand() {
-  // Double the items so the -50% translateX loop is seamless
   const doubled = [...items, ...items];
 
   return (
@@ -18,9 +17,12 @@ export default function MarqueeBand() {
       <div className="flex animate-marquee will-change-transform">
         {doubled.map((item, i) => (
           <span key={i} className="flex shrink-0 items-center">
-            <span className="text-[9px] uppercase tracking-[0.45em] text-black font-semibold px-7">
-              {item}
-            </span>
+            <a
+              href={item.href}
+              className="text-[9px] uppercase tracking-[0.45em] text-black font-semibold px-7 hover:text-black/60 transition-colors duration-200"
+            >
+              {item.label}
+            </a>
             <span className="text-black/30 text-sm select-none">·</span>
           </span>
         ))}

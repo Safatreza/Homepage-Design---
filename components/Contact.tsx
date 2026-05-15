@@ -30,38 +30,62 @@ export default function Contact() {
           {/* Right: contact details */}
           <AnimateIn direction="right" delay={150}>
             <div className="flex flex-col gap-8">
-              <div className="group">
+              {/* E-Mail */}
+              <div>
                 <p className="text-[8px] uppercase tracking-[0.5em] text-gold mb-2">E-Mail</p>
                 <a
-                  href="mailto:rene@unternehmensberatung-kühn.de"
+                  href="mailto:info@unternehmensberater-kühn.de"
                   className="text-white text-base md:text-lg hover:text-gold transition-colors duration-300 break-all relative inline-block after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-gold after:transition-all after:duration-300 hover:after:w-full"
                 >
-                  rene@unternehmensberatung-kühn.de
+                  info@unternehmensberater-kühn.de
                 </a>
               </div>
 
               <div className="w-full h-px bg-white/[0.07]" />
 
-              <div className="group">
+              {/* Telefon */}
+              <div>
                 <p className="text-[8px] uppercase tracking-[0.5em] text-gold mb-2">Telefon</p>
                 <a
-                  href="tel:+498912345678"
+                  href="tel:+491637002274"
                   className="text-white text-base md:text-lg hover:text-gold transition-colors duration-300 relative inline-block after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-gold after:transition-all after:duration-300 hover:after:w-full"
                 >
-                  +49 89 12345678
+                  +49 163 7002274
                 </a>
               </div>
 
               <div className="w-full h-px bg-white/[0.07]" />
 
+              {/* Standort — links to Google Maps for Guldeinstraße */}
               <div>
                 <p className="text-[8px] uppercase tracking-[0.5em] text-gold mb-2">Standort</p>
-                <p className="text-white text-base">München, Deutschland</p>
+                <a
+                  href="https://maps.google.com/maps?q=Guldeinstraße,+Pasing,+München,+Germany"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white text-base hover:text-gold transition-colors duration-300 inline-flex items-center gap-2 group"
+                >
+                  Pasing, Laim, Deutschland
+                  {/* Map pin icon */}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="w-4 h-4 text-gold/60 group-hover:text-gold transition-colors duration-300 group-hover:translate-y-[-1px] transition-transform"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={1.5}
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+                  </svg>
+                </a>
+                <p className="text-gray-600 text-xs mt-1">Guldeinstraße, München</p>
               </div>
 
+              {/* CTA button */}
               <a
-                href="mailto:rene@unternehmensberatung-kühn.de"
-                className="group inline-block bg-gold text-black text-[9px] uppercase tracking-[0.35em] px-10 py-4 hover:bg-gold-light transition-colors duration-300 font-semibold self-start mt-4 flex items-center gap-3"
+                href="mailto:info@unternehmensberater-kühn.de"
+                className="group inline-flex items-center gap-3 bg-gold text-black text-[9px] uppercase tracking-[0.35em] px-10 py-4 hover:bg-gold-light transition-colors duration-300 font-semibold self-start mt-4"
               >
                 Nachricht senden
                 <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>

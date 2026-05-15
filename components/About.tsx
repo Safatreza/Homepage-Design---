@@ -35,16 +35,29 @@ export default function About() {
 
           <div className="w-10 h-px bg-gold mb-8" />
 
-          {/* Small portrait */}
+          {/* Small portrait — expands on hover */}
           <div className="flex items-center gap-5 mb-8">
-            <div className="relative h-[72px] w-[72px] shrink-0 rounded-full overflow-hidden ring-1 ring-gold/30">
-              <Image
-                src="/portrait.jpeg"
-                alt="René Kühn"
-                fill
-                className="object-cover object-top"
-                sizes="72px"
-              />
+            <div className="relative group/portrait cursor-pointer shrink-0">
+              {/* Small circle */}
+              <div className="relative h-[72px] w-[72px] rounded-full overflow-hidden ring-1 ring-gold/30">
+                <Image
+                  src="/portrait.jpeg"
+                  alt="René Kühn"
+                  fill
+                  className="object-cover object-top"
+                  sizes="72px"
+                />
+              </div>
+              {/* Expanded portrait — floats above on hover */}
+              <div className="absolute bottom-[calc(100%+10px)] left-0 z-50 w-0 h-0 group-hover/portrait:w-44 group-hover/portrait:h-56 overflow-hidden rounded shadow-2xl ring-1 ring-gold/40 transition-all duration-500 ease-out origin-bottom-left">
+                <Image
+                  src="/portrait.jpeg"
+                  alt="René Kühn"
+                  fill
+                  className="object-cover object-top"
+                  sizes="176px"
+                />
+              </div>
             </div>
             <div>
               <p className="text-white text-sm font-medium tracking-wide">René Kühn</p>
